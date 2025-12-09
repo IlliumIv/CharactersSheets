@@ -5,6 +5,7 @@ using CharactersSheets.Services.Storage;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
+using Octokit;
 
 internal class Program
 {
@@ -19,6 +20,7 @@ internal class Program
         builder.Services.AddScoped<AppSettings>();
 
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+        builder.Services.AddSingleton(sp => new GitHubClient(new ProductHeaderValue("CharactersSheets")));
 
         await builder.Build().RunAsync();
     }

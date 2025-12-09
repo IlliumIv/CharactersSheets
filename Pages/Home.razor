@@ -1,3 +1,4 @@
+﻿@using Octokit
 @implements IDisposable
 
 @page "/"
@@ -11,3 +12,12 @@
 <MudTextField @bind-Value="@Settings.GitHubRepo"
 			  Label="@nameof(Settings.GitHubRepo)" Variant="Variant.Outlined" />
 
+<MudButton OnClick="_getUserAsync" Variant="Variant.Outlined">Get User</MudButton>
+<MudButton OnClick="_getCommitsAsync" Variant="Variant.Outlined">Get commits</MudButton>
+<br />
+<MudImage Src="@_user?.AvatarUrl" />
+<br />
+@foreach(var commit in _commits)
+{
+	<MudText>@commit.Commit.Message (@commit.Author.Login) : @commit.Url</MudText>
+}
