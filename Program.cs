@@ -1,5 +1,6 @@
 using Blazored.LocalStorage;
 using CharactersSheets;
+using CharactersSheets.Services.Settings;
 using CharactersSheets.Services.Storage;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -15,6 +16,7 @@ internal class Program
         builder.Services.AddMudServices();
         builder.Services.AddBlazoredLocalStorageAsSingleton();
         builder.Services.AddScoped<IStorageProvider, LocalStorage>();
+        builder.Services.AddScoped<AppSettings>();
 
         builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 

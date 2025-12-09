@@ -1,16 +1,13 @@
-﻿@page "/"
+@implements IDisposable
 
-<MudExpansionPanels MultiExpansion="true">
-    <MudExpansionPanel Text="Panel One">
-        Panel One Content
-    </MudExpansionPanel>
-    <MudExpansionPanel Text="Panel Two">
-        Panel Two Content
-    </MudExpansionPanel>
-    <MudExpansionPanel Text="Panel Three">
-        Panel Three Content
-    </MudExpansionPanel>
-    <MudExpansionPanel Text="Panel Four">
-        Panel Four Content
-    </MudExpansionPanel>
-</MudExpansionPanels>
+@page "/"
+
+<MudTextField @bind-Value="@Settings.GitHubToken"
+			  Label="@nameof(Settings.GitHubToken)" Variant="Variant.Outlined" />
+
+<MudTextField @bind-Value="@Settings.GitHubUser"
+			  Label="@nameof(Settings.GitHubUser)" Variant="Variant.Outlined" />
+
+<MudTextField @bind-Value="@Settings.GitHubRepo"
+			  Label="@nameof(Settings.GitHubRepo)" Variant="Variant.Outlined" />
+
