@@ -23,7 +23,7 @@ jobs:
 
       # Publish the site
       - name: Publish
-        run: dotnet publish characters.csproj -c:Release -o:publish -p:GHPages=true
+        run: dotnet publish CharactersSheets.csproj -c:Release -o:publish -p:GHPages=true
 
       # Deploy the site
       - name: Deploy

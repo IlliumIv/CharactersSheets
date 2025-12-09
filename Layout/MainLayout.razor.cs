@@ -1,6 +1,6 @@
 ﻿using MudBlazor;
 
-namespace characters.Layout;
+namespace CharactersSheets.Layout;
 
 public partial class MainLayout
 {
